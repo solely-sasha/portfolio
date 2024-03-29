@@ -61,13 +61,27 @@ const projectsData = [
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
+  const [showMobileImage, setShowMobileImage] = useState(false);
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
   };
 
   const handleProjectClick = (project, showMobileImage) => {
-    setSelectedProject(showMobileImage ? project : null);
+    if (showMobileImage) {
+      setSelectedProject(project);
+      setShowMobileImage(true);
+      setShowDetails(true);
+    } else {
+      setSelectedProject(project);
+      setShowDetails(!showDetails);
+      setShowMobileImage(false);
+    }
+  };
+
+  const hideDetails = () => {
+    setShowDetails(false);
+    setShowMobileImage(false);
   };
 
   return (
@@ -80,23 +94,30 @@ export default function Projects() {
           <div
             key={index}
             className="project-item"
+            onMouseEnter={() => setShowDetails(true)}
+            onMouseLeave={() => setShowDetails(false)}
             onClick={() => handleProjectClick(project)}
           >
             <img src={project.image} alt={project.title} />
             <div className={`project-details ${showDetails ? "show" : ""}`}>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="technologies">
-                {project.technologies.map((tech, index) => (
-                  <span key={index}>{tech}</span>
-                ))}
-              </div>
+              {showDetails && (
+                <>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="technologies">
+                    {project.technologies.map((tech, index) => (
+                      <span key={index}>{tech}</span>
+                    ))}
+                  </div>
+                </>
+              )}
+
               <div className="project-links">
                 <button
-                  className="github-button project-button" // Add the project-button class here
+                  className="github-button project-button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    window.open(project.githubLink, "_blank"); // Open GitHub link in a new tab
+                    window.open(project.githubLink, "_blank");
                   }}
                 >
                   <FaGithub className="project-link" />
@@ -119,12 +140,9 @@ export default function Projects() {
           </div>
         ))}
       </div>
-      {selectedProject && (
+      {selectedProject && showMobileImage && (
         <div className="mobile-view">
-          <button
-            className="close-button"
-            onClick={() => setSelectedProject(null)}
-          >
+          <button className="close-button" onClick={hideDetails}>
             Close
           </button>
           <img
