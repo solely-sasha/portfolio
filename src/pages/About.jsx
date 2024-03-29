@@ -63,21 +63,21 @@ export default function About() {
             <div className="about-content-2">
               <div className="social-icons">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/solely-sasha"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaGithub className="icon" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/sasha-sims"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaLinkedin className="icon" />
                 </a>
                 <a
-                  href="https://facebook.com/yourusername"
+                  href="https://www.facebook.com/ssasha86/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -85,7 +85,7 @@ export default function About() {
                 </a>
 
                 <a
-                  href="https://instagram.com/yourusername"
+                  href="https://instagram.com/solely-sasha"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
