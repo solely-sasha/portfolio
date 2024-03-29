@@ -85,7 +85,7 @@ export default function About() {
                 </a>
 
                 <a
-                  href="https://instagram.com/solely-sasha"
+                  href="https://instagram.com/solely.sasha"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
