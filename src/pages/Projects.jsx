@@ -60,9 +60,14 @@ const projectsData = [
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showDetails, setShowDetails] = useState(false);
 
-  const handleProjectClick = (project) => {
-    setSelectedProject(project);
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
+  const handleProjectClick = (project, showMobileImage) => {
+    setSelectedProject(showMobileImage ? project : null);
   };
 
   return (
@@ -78,7 +83,7 @@ export default function Projects() {
             onClick={() => handleProjectClick(project)}
           >
             <img src={project.image} alt={project.title} />
-            <div className="project-details">
+            <div className={`project-details ${showDetails ? "show" : ""}`}>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <div className="technologies">
@@ -87,15 +92,24 @@ export default function Projects() {
                 ))}
               </div>
               <div className="project-links">
-                <a href={project.githubLink} className="github-button">
-                  <FaGithub className="project-link" />
-                  GitHub
-                </a>
                 <button
-                  className="mobile-button"
+                  className="github-button project-button" // Add the project-button class here
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleProjectClick(project);
+                    window.open(project.githubLink, "_blank"); // Open GitHub link in a new tab
+                  }}
+                >
+                  <FaGithub className="project-link" />
+                  GitHub
+                </button>
+                <button className="toggle-button" onClick={toggleDetails}>
+                  {showDetails ? "Hide Details" : "Show Details"}
+                </button>
+                <button
+                  className="mobile-button project-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleProjectClick(project, true);
                   }}
                 >
                   Mobile View
