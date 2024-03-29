@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../css/About.css";
-import Projects from "./Projects";
+
 
 export default function About() {
   return (
