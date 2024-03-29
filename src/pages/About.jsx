@@ -3,7 +3,6 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../css/About.css";
 
-
 export default function About() {
   return (
     <>
@@ -26,7 +25,7 @@ export default function About() {
             <span className="highlight">eager to learn</span> <br />
             <span className="highlight">focused</span> on a career, my full
             commitment is easy to earn <br />
-            in my employment history, you'll notice a gap <br />
+            In my employment history, you'll notice a gap <br />
             but I've been steadily gaining skills as an{" "}
             <span className="highlight">active</span> mom <br />
             so don't worry about that <br />
@@ -36,7 +35,7 @@ export default function About() {
               consistent
             </span>{" "}
             effort it takes <br />
-            because nothing has every been handed to me
+            because nothing has ever been handed to me
             <br /> they say you become who you surround yourself with
             <br /> this a matter of <span className="highlight">value</span> for
             which I truly <span className="highlight">care</span>
