@@ -183,8 +183,8 @@
   .project-item {
     position: relative;
     width: calc(33.33% - 40px);
-    max-width: 600px;
-    margin: 30px;
+    max-width: calc(33.33% - 40px);
+
     text-decoration: none;
     transform: scale(1.05);
     transition: transform 0.3s ease;
@@ -207,7 +207,7 @@
     align-items: center;
   }
   .project-item:hover {
-    transform: scale(1.1);
+    transform: scale(1);
   }
 
   .project-details h3 {
