@@ -25,7 +25,7 @@ export default function Header() {
             <button>Read More</button>
           </Link>
           <a
-            href="https://docs.google.com/document/d/10qYNbEV8_IpleoSXboSVBiP2MGsIpkvZi6b560s7Peo/edit?usp=sharing"
+            href="https://docs.google.com/document/d/1yJYrp1OWhIUwXwYNgcWMiGYmWgk-wML_oh4YnvPt6iY/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
