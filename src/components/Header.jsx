@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Header.css";
-import profile from "../assets/images/profile-img.png";
+import profile from "../assets/images/profile.png";
 import { Link } from "react-router-dom";
 
 export default function Header() {
